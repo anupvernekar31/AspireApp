@@ -148,9 +148,13 @@ export const getAllCards = (): Promise<CardType[]> => {
 "web": "expo start --web",
 "lint": "expo lint"
 ```
-[![Watch the video](./assets//images/youtube.jpg)](https://www.youtube.com/watch?v=MtCdboI-Mjw)
 
-Click on the youtube logo to see the demo of App. 
+<a href="https://www.youtube.com/watch?v=MtCdboI-Mjw">
+
+  <img src="./assets/images/youtube.jpg" width="50" />
+</a>
+
+Click on the youtube logo to see the demo of App.
 
 Video URL: [https://www.youtube.com/watch?v=MtCdboI-Mjw](https://www.youtube.com/watch?v=MtCdboI-Mjw)
 
