@@ -16,14 +16,14 @@ import { useRouter } from "expo-router";
 
 import { Colors } from "@/constants/Colors";
 import { addCard } from "@/store/slices/cardSlice";
+import CardFormModal from "@/components/CardFormModal";
 
 const HomeScreen = () => {
-
   // hooks
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const handleAddCard = () => {
+  const handleAddCard = (cardName: string) => {
     const newCard = {
       id: uuid.v4(),
       name: cardName,
@@ -66,45 +66,11 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View>
-        <Modal animationType="fade" transparent={true} visible={modalVisible}>
-          <View style={styles.overlay}>
-            <View style={styles.modalCard}>
-              <Text style={styles.heading}>💳 Add Debit Card</Text>
-
-              <Text style={styles.label}>Cardholder Name</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="e.g. John Doe"
-                value={cardName}
-                onChangeText={setCardName}
-                maxLength={25}
-              />
-
-              <View style={styles.footer}>
-                <TouchableOpacity
-                  disabled={cardName === ""}
-                  style={[
-                    styles.button,
-                    { opacity: cardName !== "" ? 1 : 0.5 },
-                  ]}
-                  onPress={handleAddCard}
-                >
-                  <Text style={styles.buttonText}>Submit</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.button, { backgroundColor: "#ccc" }]}
-                  onPress={() => setModalVisible(false)}
-                >
-                  <Text style={[styles.buttonText, { color: "#000" }]}>
-                    Cancel
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </Modal>
-      </View>
+      <CardFormModal
+        visible={modalVisible}
+        onSubmit={handleAddCard}
+        onCancel={() => setModalVisible(false)}
+      />
       <View style={styles.addContainer}>
         <Image
           tintColor={Colors["light"].primary}

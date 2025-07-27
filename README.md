@@ -20,8 +20,8 @@ A mobile wallet app built with **React Native**, **Expo Router**, **Redux Toolki
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/your-username/aspirewallet.git
-   cd aspirewallet
+   git clone https://github.com/anupvernekar31/AspireApp.git
+   cd AspireApp
 
    ```
 
@@ -112,14 +112,14 @@ export const getAllCards = (): Promise<CardType[]> => {
 
 ## 🧪 Manual Testing Instructions
 
-- **Cards**: There are 3 different cards already added. The Menu items below the card is with respect to the card u are currently seeing.
+- **Cards**: There are 3 different cards already added. The Menu items below the card is with respect to the card you are currently seeing.
 
 - **Freeze Card**: Toggle the "Freeze card" switch. Card opacity changes and status displays as "Frozen".
 - **Spending Limit**:
   - Toggle **ON** to navigate to the spending limit screen and set an amount.
   - Toggle **OFF** to immediately clear the limit in Redux.
 - **Add Card**:
-   - You will get a button on "Home Screen" to add a new card. A Modal will appear where u can add card Holder Name and proceed. Now u can go to the Debit cards tab and the new card willl be added in the carousel.
+   - You will get a button on "Home Screen" to add a new card. A Modal will appear where u can add card Holder Name and proceed. Now u can go to the Debit cards tab and the new card will be added in the start of carousel.
 
 - **Card Number Masking**: Card numbers are partially masked with dots.
 
