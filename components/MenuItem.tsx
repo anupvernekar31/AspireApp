@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   menuItem: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 40,
+    marginBottom: 25,
   },
   menuIcon: {
     marginRight: 15,
