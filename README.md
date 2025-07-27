@@ -148,3 +148,10 @@ export const getAllCards = (): Promise<CardType[]> => {
 "web": "expo start --web",
 "lint": "expo lint"
 ```
+[![Watch the video](./assets//images/youtube.jpg)](https://www.youtube.com/watch?v=MtCdboI-Mjw)
+
+Click on the youtube logo to see the demo of App. 
+
+Video URL: [https://www.youtube.com/watch?v=MtCdboI-Mjw](https://www.youtube.com/watch?v=MtCdboI-Mjw)
+
+Github URL: [https://github.com/anupvernekar31/AspireApp](https://github.com/anupvernekar31/AspireApp)
