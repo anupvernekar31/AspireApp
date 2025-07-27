@@ -1,50 +1,152 @@
-# Welcome to your Expo app 👋
+# 💳 Aspire Wallet
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile wallet app built with **React Native**, **Expo Router**, **Redux Toolkit**, and **Redux-Saga**. This application simulates debit card management, including card freezing, spending limits, and card generation using a mock API.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Features
+
+- View and manage multiple debit cards
+- Toggle card freeze status
+- Set and clear weekly spending limits
+- Add new cards
+- Carousel UI for cards
+- Expo-compatible (runs on Android, iOS)
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/your-username/aspirewallet.git
+   cd aspirewallet
+
+   ```
+
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Start the application**
 
-   ```bash
-   npx expo start
-   ```
+You can run the app on different platforms using the following commands:
 
-In the output, you'll find options to open the app in a
+- **iOS** (simulator or Expo Go):
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+  ```bash
+  npm run ios
+  ```
+  >This will generate a QR code on terminal. You can scan it and see on ur physical device
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Android** (emulator or Expo Go):
+  ```bash
+  npm run android
+  ```
+  >This will generate a QR code on terminal. You can scan it and see on ur physical device
 
-## Get a fresh project
 
-When you're ready, run:
 
-```bash
-npm run reset-project
+> ✅ Make sure you have the Expo Go app installed on your mobile device for physical testing, or use Android Studio / Xcode for emulator-based testing.
+
+---
+
+## 📦 Project Structure
+
+```
+.
+├── app/                  # Expo Router pages (including tabs and screens)
+├── assets/               # Static images and fonts
+├── components/           # Reusable UI components
+├── constants/            # Colors
+├── store/                # Redux Toolkit + Sagas setup
+│   ├── slices/           # Redux slices (cards)
+│   ├── sagas/            # Saga workers & watchers
+│   └── index.ts          # Store config
+├── api/                  # Mock API functions
+├── hooks/                # Custom hooks
+└── README.md             # This file
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🔌 Mock API Endpoints
 
-To learn more about developing your project with Expo, look at the following resources:
+All data is powered by **client-side mock functions** — no real backend needed.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Located in:
 
-## Join the community
+```
+/api/cardApi.ts
+```
 
-Join our community of developers creating universal apps.
+Example:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```ts
+export const getAllCards = (): Promise<CardType[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        {
+          id: "1",
+          name: "Mark Henry",
+          number: "5647341124132020",
+          balance: 55000,
+          expiry: "12/07",
+          cvv: "123",
+          isFrozen: false,
+          isSpendingLimitSet: true,
+          spendingLimit: 5000,
+        },
+        ...
+      ]);
+    }, 1000);
+  });
+};
+```
+
+---
+
+## 🧪 Manual Testing Instructions
+
+- **Cards**: There are 3 different cards already added. The Menu items below the card is with respect to the card u are currently seeing.
+
+- **Freeze Card**: Toggle the "Freeze card" switch. Card opacity changes and status displays as "Frozen".
+- **Spending Limit**:
+  - Toggle **ON** to navigate to the spending limit screen and set an amount.
+  - Toggle **OFF** to immediately clear the limit in Redux.
+- **Add Card**:
+   - You will get a button on "Home Screen" to add a new card. A Modal will appear where u can add card Holder Name and proceed. Now u can go to the Debit cards tab and the new card willl be added in the carousel.
+
+- **Card Number Masking**: Card numbers are partially masked with dots.
+
+
+---
+
+## 📚 Technologies Used
+
+- **React Native (v0.79)**
+- **Expo SDK 53**
+- **Expo Router**
+- **Redux Toolkit**
+- **Redux Saga**
+- **TypeScript**
+- **react-native-reanimated-carousel** (for carousel)
+- **react-native-uuid** (for unique card IDs)
+
+---
+
+## 🛠 Scripts
+
+```json
+"start": "expo start",
+"android": "expo start --android",
+"ios": "expo start --ios",
+"web": "expo start --web",
+"lint": "expo lint"
+```
+
+
