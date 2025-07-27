@@ -33,6 +33,7 @@ A mobile wallet app built with **React Native**, **Expo Router**, **Redux Toolki
 
 3. **Start the application**
 
+Make sure you open the simulator/emulator you want to run the application on.
 You can run the app on different platforms using the following commands:
 
 - **iOS** (simulator or Expo Go):
@@ -40,15 +41,14 @@ You can run the app on different platforms using the following commands:
   ```bash
   npm run ios
   ```
-  >This will generate a QR code on terminal. You can scan it and see on ur physical device
 
 - **Android** (emulator or Expo Go):
   ```bash
   npm run android
   ```
-  >This will generate a QR code on terminal. You can scan it and see on ur physical device
+  > This will generate a QR code on terminal. You can scan it and see on ur physical device(optional)
 
-
+> This opens the app on the last used simulator/ emulator. If u want to run the app on Particular simulator first open the desired simulator and then run the above command.
 
 > ✅ Make sure you have the Expo Go app installed on your mobile device for physical testing, or use Android Studio / Xcode for emulator-based testing.
 
@@ -119,10 +119,10 @@ export const getAllCards = (): Promise<CardType[]> => {
   - Toggle **ON** to navigate to the spending limit screen and set an amount.
   - Toggle **OFF** to immediately clear the limit in Redux.
 - **Add Card**:
-   - You will get a button on "Home Screen" to add a new card. A Modal will appear where u can add card Holder Name and proceed. Now u can go to the Debit cards tab and the new card will be added in the start of carousel.
+
+  - You will get a button on "Home Screen" to add a new card. A Modal will appear where u can add card Holder Name and proceed. Now u can go to the Debit cards tab and the new card will be added in the start of carousel.
 
 - **Card Number Masking**: Card numbers are partially masked with dots.
-
 
 ---
 
@@ -148,5 +148,3 @@ export const getAllCards = (): Promise<CardType[]> => {
 "web": "expo start --web",
 "lint": "expo lint"
 ```
-
-

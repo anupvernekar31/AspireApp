@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     color: Colors["light"].greyLevel0,
     fontSize: 14,
     fontWeight: 600,
-    marginTop: 22,
+    marginTop: 12,
     letterSpacing: 4,
   },
   cardDetailsRow: {
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   cardDetails: {
-    letterSpacing: 2,
+    letterSpacing: 1,
     color: Colors["light"].greyLevel0,
     fontSize: 13,
     fontWeight: 600,
@@ -159,7 +159,6 @@ const styles = StyleSheet.create({
   visaLogo: {
     marginTop: 10,
     alignSelf: "flex-end",
-    marginRight: 10,
   },
   cardName: {
     color: "#fff",
